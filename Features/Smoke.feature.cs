@@ -19,22 +19,22 @@ namespace SpecFlowNunit.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.7.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("Search", Description="\tBasic search on the site", SourceFile="Features\\Search.feature", SourceLine=0)]
-    public partial class SearchFeature
+    [TechTalk.SpecRun.FeatureAttribute("Smoke", Description="\tBasic functionality on the site", SourceFile="Features\\Smoke.feature", SourceLine=0)]
+    public partial class SmokeFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "Search.feature"
+#line 1 "Smoke.feature"
 #line hidden
         
         [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Search", "\tBasic search on the site", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Smoke", "\tBasic functionality on the site", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -73,7 +73,7 @@ namespace SpecFlowNunit.Features
         public virtual void FeatureBackground()
         {
 #line 4
- #line hidden
+#line hidden
 #line 5
  testRunner.Given("I am on the \'Home\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
@@ -108,7 +108,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 4
- this.FeatureBackground();
+this.FeatureBackground();
 #line hidden
 #line 9
  testRunner.Given("I click on Search icon in top header menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
@@ -121,6 +121,68 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
 #line 12
  testRunner.Then("Url equals to \'https://www.epam.com/search?q=Ukraine\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Availability of links in the footer", new string[] {
+                "Medium"}, SourceLine=14)]
+        public virtual void AvailabilityOfLinksInTheFooter()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "Medium"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Availability of links in the footer", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 15
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+#line 16
+ testRunner.When("I scroll to the bottom of the page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                            "linkName",
+                            "linkHref"});
+                table1.AddRow(new string[] {
+                            "INVESTORS",
+                            "/about/investors"});
+                table1.AddRow(new string[] {
+                            "OPEN SOURCE",
+                            "/open-source"});
+                table1.AddRow(new string[] {
+                            "PRIVACY POLICY",
+                            "/privacy-policy"});
+                table1.AddRow(new string[] {
+                            "COOKIE POLICY",
+                            "/cookie-policy"});
+                table1.AddRow(new string[] {
+                            "APPLICANT PRIVACY NOTICE",
+                            "/applicant-privacy-notice"});
+                table1.AddRow(new string[] {
+                            "WEB ACCESSIBILITY",
+                            "/web-accessibility-statement"});
+#line 17
+ testRunner.Then("I see next links", ((string)(null)), table1, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -1,6 +1,9 @@
 ﻿using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
+using SpecFlowNunit.Hooks.Helpers.TestEntities;
 using SpecFlowNunit.Pages;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SpecflowDemo.Pages
 {
@@ -18,5 +21,15 @@ namespace SpecflowDemo.Pages
 			SearchButton.Click();
 			return new SearchFormPage(driver);
 		}
+
+		public List<Link> GetFooterLinks()
+		{
+			var links = new List<Link>();
+			var elements = driver.FindElements(By.XPath("//a[contains(@class, 'footer__links-item')]")).ToList();
+
+			elements.ForEach(link => links.Add(new Link() { Name = link.Text, Href = link.GetAttribute("href") }));
+
+			return links;
+		} 
 	}
 }

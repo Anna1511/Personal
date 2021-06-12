@@ -34,9 +34,9 @@ namespace SpecflowDemo.Framework.Hooks
 		[AfterScenario]
 		public void TearDown()
 		{
-			using IWebDriver driver = _objectContainer.Resolve<IWebDriver>();
-			driver.Close();
-			driver.Dispose();
+			//using IWebDriver driver = _objectContainer.Resolve<IWebDriver>();
+			_driver.Quit();
+			_driver.Dispose();
 		}
 	}
 }
