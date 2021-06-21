@@ -1,0 +1,17 @@
+﻿{
+  "$schema": "https://raw.githubusercontent.com/reportportal/agent-net-specflow/master/ReportPortal.SpecFlowPlugin/ReportPortal.config.schema",
+  "enabled": true,
+  "server": {
+    "url": "https://rp.epam.com/api/v1/",
+    "project": "anna_bilovus_personal",
+    "authentication": {
+      "uuid": "13e36e51-9b1b-4e96-81f5-d43d9f37e324"
+    }
+  },
+  "launch": {
+    "name": "SpecFlow Demo Launch",
+    "description": "this is description",
+    "debugMode": true,
+    "attributes": [ "t1", "os:win10" ]
+  }
+}

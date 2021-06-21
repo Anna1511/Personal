@@ -20,6 +20,18 @@
     
 
     
+    <PackageReference Include="ReportPortal.Client" Version="3.0.5" />
+    
+
+    
+
+    
+    <PackageReference Include="ReportPortal.SpecFlow" Version="3.2.0" />
+    
+
+    
+
+    
     <PackageReference Include="Selenium.Support" Version="3.141.0" />
     
 
@@ -34,6 +46,12 @@
     
     <PackageReference Include="SpecRun.SpecFlow" Version="3.7.3" />
     
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ReportPortal.config.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
